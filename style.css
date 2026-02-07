@@ -7,82 +7,50 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-.main-content {
+/* Password Screen Styling */
+#login-screen {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.login-box {
     text-align: center;
-    max-width: 900px;
-    padding: 20px;
-}
-
-.glow-text {
-    font-family: 'Great Vibes', cursive;
-    font-size: 4rem;
-    color: #ffb7c5;
-    text-shadow: 0 0 10px #ff1b6b, 0 0 20px #ff1b6b;
-    margin-bottom: 40px;
-}
-
-.timer {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 50px;
-}
-
-.time-box {
+    padding: 40px;
     border: 1px solid #ff1b6b;
-    padding: 10px 20px;
-    border-radius: 5px;
-    min-width: 80px;
-    background: rgba(255, 27, 107, 0.05);
+    border-radius: 15px;
 }
 
-.time-box p {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    color: #ffb7c5;
-    margin: 0 0 5px 0;
+.login-box h1 { font-family: 'Great Vibes', cursive; color: #ffb7c5; font-size: 3rem; margin: 0; }
+.login-box input { padding: 10px; margin: 20px 0; border-radius: 5px; border: 1px solid #ff1b6b; background: #111; color: white; text-align: center; }
+.login-box button { background: #ff1b6b; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+/* Main Content Styling */
+#protected-content {
+    display: none; /* Hidden until password is correct */
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 
-.time-box span {
-    font-size: 2.5rem;
-    font-weight: 600;
-}
+.main-content { text-align: center; padding: 20px; }
+.glow-text { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: #ffb7c5; text-shadow: 0 0 15px #ff1b6b; }
 
-/* Polaroid Photo Styling */
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
-}
+.timer { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
+.time-box { border: 1px solid #ff1b6b; padding: 10px; border-radius: 5px; min-width: 70px; }
+.time-box p { font-size: 0.6rem; color: #ffb7c5; margin: 0; text-transform: uppercase; }
+.time-box span { font-size: 2rem; font-weight: bold; }
 
-.polaroid {
-    background: white;
-    padding: 15px 15px 40px 15px;
-    box-shadow: 0 0 15px rgba(255, 27, 107, 0.4);
-    transition: transform 0.3s ease;
-}
+.gallery { display: flex; justify-content: center; gap: 30px; }
+.polaroid { background: white; padding: 10px 10px 30px 10px; box-shadow: 0 0 20px rgba(255, 27, 107, 0.3); transition: 0.3s; }
+.polaroid img { width: 220px; height: 280px; object-fit: cover; }
+.caption { font-family: 'Great Vibes', cursive; color: #333; font-size: 1.2rem; margin-top: 10px; }
 
-.polaroid img {
-    width: 250px; /* Forces photos to stay contained */
-    height: 300px;
-    object-fit: cover;
-}
-
-.caption {
-    font-family: 'Great Vibes', cursive;
-    color: #333;
-    font-size: 1.5rem;
-    margin-top: 15px;
-}
-
-.left { transform: rotate(-5deg); }
-.right { transform: rotate(5deg); }
-
-.polaroid:hover {
-    transform: rotate(0deg) scale(1.05);
-    z-index: 10;
-}
+.left { transform: rotate(-4deg); }
+.right { transform: rotate(4deg); }
