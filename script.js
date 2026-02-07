@@ -1,16 +1,30 @@
-const targetDate = new Date("February 18, 2026 00:00:00").getTime();
+function checkPassword() {
+    const entered = document.getElementById("password-input").value;
+    const secret = "141719"; // Change your password here
 
-const countdown = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
-
-    if (distance < 0) {
-        clearInterval(countdown);
-        document.querySelector(".timer").innerHTML = "<h1>It's Time! ❤️</h1>";
+    if (entered === secret) {
+        // Hide login and show content
+        document.getElementById("login-screen").style.display = "none";
+        const content = document.getElementById("protected-content");
+        content.style.display = "block";
+        setTimeout(() => { content.style.opacity = "1"; }, 10);
+        
+        startCountdown();
+    } else {
+        alert("Incorrect code! ❤️");
     }
-}, 1000);
+}
+
+function startCountdown() {
+    const targetDate = new Date("February 18, 2026 00:00:00").getTime();
+    
+    setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+    }, 1000);
+}
