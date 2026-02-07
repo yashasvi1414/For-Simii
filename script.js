@@ -16,7 +16,7 @@ function checkPassword() {
 }
 
 function startCountdown() {
-    const targetDate = new Date("February 18, 2026 00:00:00").getTime();
+    const targetDate = new Date("February 19, 2026 07:00:00").getTime();
     
     setInterval(() => {
         const now = new Date().getTime();
