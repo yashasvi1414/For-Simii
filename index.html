@@ -6,44 +6,41 @@
     <title>Counting Down ❤️</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-    <meta property="og:title" content="A surprise for you..." />
-    <meta property="og:description" content="Counting down the seconds ❤️" />
-    <meta property="og:image" content="photo1.jpeg" />
 </head>
 <body>
-    <div class="main-content">
-        <h1 class="glow-text">Counting down to February 18th ❤️</h1>
-        
-        <div class="timer">
-            <div class="time-box">
-                <p>Days</p>
-                <span id="days">00</span>
-            </div>
-            <div class="time-box">
-                <p>Hours</p>
-                <span id="hours">00</span>
-            </div>
-            <div class="time-box">
-                <p>Min</p>
-                <span id="minutes">00</span>
-            </div>
-            <div class="time-box">
-                <p>Sec</p>
-                <span id="seconds">00</span>
-            </div>
+    <div id="login-screen">
+        <div class="login-box">
+            <h1>For Simii ❤️</h1>
+            <p>Enter our secret code</p>
+            <input type="password" id="password-input" placeholder="Secret word...">
+            <button onclick="checkPassword()">Unlock</button>
         </div>
+    </div>
 
-        <div class="gallery">
-            <div class="polaroid left">
-                <img src="photo1.jpeg" alt="Memory 1">
-                <div class="caption">Us ❤️</div>
+    <div id="protected-content">
+        <div class="main-content">
+            <h1 class="glow-text">Counting down to February 18th ❤️</h1>
+            
+            <div class="timer">
+                <div class="time-box"><p>Days</p><span id="days">00</span></div>
+                <div class="time-box"><p>Hours</p><span id="hours">00</span></div>
+                <div class="time-box"><p>Min</p><span id="minutes">00</span></div>
+                <div class="time-box"><p>Sec</p><span id="seconds">00</span></div>
             </div>
-            <div class="polaroid right">
-                <img src="photo2.jpeg" alt="Memory 2">
-                <div class="caption">Always ✨</div>
+
+            <div class="gallery">
+                <div class="polaroid left">
+                    <img src="photo1.jpeg" alt="Us">
+                    <div class="caption">Us ❤️</div>
+                </div>
+                <div class="polaroid right">
+                    <img src="photo2.jpeg" alt="Always ✨">
+                    <div class="caption">Always ✨</div>
+                </div>
             </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
